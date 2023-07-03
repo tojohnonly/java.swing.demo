@@ -1,2 +1,4 @@
-# java.swing.demo
-Java Swing Demo
+# Java Swing Demo
+
+Based on Java 11
+
