@@ -8,11 +8,11 @@ import java.awt.event.MouseEvent;
 public class FrameContainer {
 
     // 各种字体
-    static Font wordFont = new Font("Microsoft YaHei UI",Font.PLAIN, 25);
+    static Font wordFont = new Font("Microsoft YaHei UI", Font.PLAIN, 25);
     static Font pronounceFont = new Font(Font.SERIF, Font.PLAIN, 17);
-    static Font translationFont = new Font("霞鹜文楷",Font.PLAIN, 19);
-    static Font exampleFont = new Font("霞鹜文楷",Font.PLAIN, 15);
-    static Font buttonFont = new Font("Microsoft YaHei UI",Font.PLAIN, 15);
+    static Font translationFont = new Font("霞鹜文楷", Font.PLAIN, 19);
+    static Font exampleFont = new Font("霞鹜文楷", Font.PLAIN, 15);
+    static Font buttonFont = new Font("Microsoft YaHei UI", Font.PLAIN, 15);
 
     // 颜色
     static Color panelBgColor = new Color(65, 63, 62);
@@ -24,7 +24,6 @@ public class FrameContainer {
     static JPanel modePanel = assembleModePanel();
     // 组装学习面板
     static JPanel learningPanel = assembleLearningPanel();
-
 
     public static JFrame assembleFrame() {
         // 主窗体设置大小
@@ -40,9 +39,8 @@ public class FrameContainer {
         // 设置背景色
         frame.getContentPane().setBackground(panelBgColor);
         // Set App Icon
-        ImageIcon imageIcon = new ImageIcon("D:\\Software\\Windows\\Themes\\Icons\\Pngs\\meistertask-task-management-2019-05-20.png");
+        ImageIcon imageIcon = new ImageIcon("D:\\Themes\\Icons\\AppIcon.png");
         frame.setIconImage(imageIcon.getImage().getScaledInstance(80, 80, Image.SCALE_DEFAULT));
-
 
         frame.add(modePanel);
         // frame.add(learningPanel);
@@ -60,7 +58,8 @@ public class FrameContainer {
 
         // 单词
         JLabel summaryLabel = new JLabel("All Words: 5366, Learned: 2377");
-        //JLabel summaryLabel = new JLabel("<html><body style=\"width:400px;text-align:center\">" + "All Words: 5366   Learned: 2377" + "<body></html>");
+        // JLabel summaryLabel = new JLabel("<html><body style=\"width:400px;text-align:center\">" + "All Words: 5366
+        // Learned: 2377" + "<body></html>");
         summaryLabel.setBounds(80, 20, 250, 35);
         summaryLabel.setFont(buttonFont);
         summaryLabel.setForeground(Color.WHITE);
@@ -81,10 +80,12 @@ public class FrameContainer {
                 frame.add(learningPanel);
                 frame.validate();
             }
+
             @Override
             public void mouseEntered(MouseEvent e) {
                 learningModeBtn.setBackground(new Color(98, 96, 95));
             }
+
             @Override
             public void mouseExited(MouseEvent e) {
                 learningModeBtn.setBackground(new Color(83, 81, 80));
@@ -107,10 +108,12 @@ public class FrameContainer {
                 frame.add(learningPanel);
                 frame.validate();
             }
+
             @Override
             public void mouseEntered(MouseEvent e) {
                 reviewModeBtn.setBackground(new Color(98, 96, 95));
             }
+
             @Override
             public void mouseExited(MouseEvent e) {
                 reviewModeBtn.setBackground(new Color(83, 81, 80));
@@ -133,10 +136,12 @@ public class FrameContainer {
                 frame.add(learningPanel);
                 frame.validate();
             }
+
             @Override
             public void mouseEntered(MouseEvent e) {
                 mixedModeBtn.setBackground(new Color(98, 96, 95));
             }
+
             @Override
             public void mouseExited(MouseEvent e) {
                 mixedModeBtn.setBackground(new Color(83, 81, 80));
@@ -151,7 +156,7 @@ public class FrameContainer {
         return panel;
     }
 
-    public static JPanel assembleLearningPanel(){
+    public static JPanel assembleLearningPanel() {
         JPanel panel = new JPanel();
         // 组件设置为绝对定位
         panel.setLayout(null);
@@ -172,7 +177,7 @@ public class FrameContainer {
 
         // translation
         final String translation = "a.不平常地，非常";
-        //String translation = "a.不平常地，非常 n.缺席，不在场；缺乏 vt.(使)加快；促进";
+        // String translation = "a.不平常地，非常 n.缺席，不在场；缺乏 vt.(使)加快；促进";
         final JAnimationLabel translationLabel = new JAnimationLabel("*************");
         translationLabel.setBounds(30, 95, 400, 50);
         translationLabel.setFont(translationFont);
@@ -180,7 +185,7 @@ public class FrameContainer {
 
         // example
         final String example = "He was an unusually complex man. 他是个异常复杂的人。";
-        //String example = "";
+        // String example = "";
         final JAnimationLabel exampleLabel = new JAnimationLabel("*************", 10);
         exampleLabel.setBounds(30, 145, 400, 55);
         exampleLabel.setFont(exampleFont);
@@ -200,12 +205,13 @@ public class FrameContainer {
             public void mouseClicked(MouseEvent e) {
                 translationLabel.setAnimationText(translation);
                 exampleLabel.setAnimationText(example);
-                //JOptionPane.showMessageDialog(panel, "Bad Folder Path !", "Warning", JOptionPane.WARNING_MESSAGE);
             }
+
             @Override
             public void mouseEntered(MouseEvent e) {
                 dkBtn.setBackground(new Color(98, 96, 95));
             }
+
             @Override
             public void mouseExited(MouseEvent e) {
                 dkBtn.setBackground(new Color(83, 81, 80));
@@ -224,14 +230,15 @@ public class FrameContainer {
         hmBtn.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
-                translationLabel.setAnimationText(translation + "0");
-                exampleLabel.setAnimationText(example + "0");
-                //JOptionPane.showMessageDialog(panel, "Bad Folder Path !", "Warning", JOptionPane.WARNING_MESSAGE);
+                translationLabel.setAnimationText(translation);
+                exampleLabel.setAnimationText(example);
             }
+
             @Override
             public void mouseEntered(MouseEvent e) {
                 hmBtn.setBackground(new Color(98, 96, 95));
             }
+
             @Override
             public void mouseExited(MouseEvent e) {
                 hmBtn.setBackground(new Color(83, 81, 80));
@@ -250,14 +257,15 @@ public class FrameContainer {
         kimBtn.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
-                translationLabel.setAnimationText(translation + "1啊快点发哈快速导航饭卡手动阀卡死的回复");
-                exampleLabel.setAnimationText(example + "啊手动阀手动阀");
-                //JOptionPane.showMessageDialog(panel, "Bad Folder Path !", "Warning", JOptionPane.WARNING_MESSAGE);
+                translationLabel.setAnimationText(translation);
+                exampleLabel.setAnimationText(example);
             }
+
             @Override
             public void mouseEntered(MouseEvent e) {
                 kimBtn.setBackground(new Color(98, 96, 95));
             }
+
             @Override
             public void mouseExited(MouseEvent e) {
                 kimBtn.setBackground(new Color(83, 81, 80));
